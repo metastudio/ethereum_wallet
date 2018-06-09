@@ -1,0 +1,10 @@
+h1 Withdrows
+
+- if @withdrows.count == 0
+  p You have no withdrows now
+- else
+  - @withdrows.each do |withdrow|
+    | to: #{withdrow.to}, amount: #{withdrow.amount}
+    br
+
+== link_to 'New withdrow', new_withdrow_path

@@ -1,0 +1,10 @@
+h1 Deposits
+
+- if @deposits.count == 0
+  p You have no deposits now
+- else
+  - @deposits.each do |deposit|
+    | from: #{deposit.from}, amount: #{deposit.amount}
+    br
+
+== link_to 'New deposit', new_deposit_path

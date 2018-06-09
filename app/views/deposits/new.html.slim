@@ -1,0 +1,19 @@
+h1 New Deposit
+p * At the same time transactions work only from this node accounts
+
+== form_for @deposit, url: { action: 'create' } do |f|
+  - if @deposit.errors.any?
+    #error_explanation
+      h2 #{pluralize(@deposit.errors.count, "error")} prohibited this deposit from being saved:
+      ul
+        - @deposit.errors.full_messages.each do |message|
+          li #{message}
+
+  == f.label :from
+  == f.text_field :from
+  br
+  == f.label :amount
+  == f.text_field :amount
+  p amount must looks like 1 eth or 0.0001
+  br
+  == f.submit 'Create'

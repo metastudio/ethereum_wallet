@@ -1,0 +1,18 @@
+h1 New Withdrow
+
+== form_for @withdrow, url: { action: 'create' } do |f|
+  - if @withdrow.errors.any?
+    #error_explanation
+      h2 #{pluralize(@withdrow.errors.count, "error")} prohibited this Withdrow from being saved:
+      ul
+        - @withdrow.errors.full_messages.each do |message|
+          li #{message}
+
+  == f.label :to
+  == f.text_field :to
+  br
+  == f.label :amount
+  == f.text_field :amount
+  p amount must looks like 1 eth or 0.0001
+  br
+  == f.submit 'Create'
